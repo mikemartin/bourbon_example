@@ -16,17 +16,15 @@ $ gem install bitters
 ```
 
 #### Install Borbon, Neat, Bitters
-Import bourbon and neat with leading underscores.
-
 ```
 $ cd css/
-$ bourbon install --path _bourbon/
-$ neat install --path _neat/
+$ bourbon install
+$ neat install
 $ bitters install
 ```
 
 #### Neat grid settings and functions
-This fork enables Neat functions in Bitters. I've added @import "grid-settings" before Neat, and imported the rest of bitters after.
+This app manifest enables Neat functions in Bitters. Bitters "base/grid-settings" and Neat are imported before the rest of Bitters.
 
 ```
 @import "bourbon"
@@ -34,7 +32,12 @@ This fork enables Neat functions in Bitters. I've added @import "grid-settings" 
 @import "base/grid-settings"
 @import "neat"
 @import "base/base"
+```
 
+### Neat helper import
+In "base/grid-settings", you must import neat-helpers with a relative path when not in Rails.
+```
+@import "../neat/neat-helpers";
 ```
 
 #### Compile
